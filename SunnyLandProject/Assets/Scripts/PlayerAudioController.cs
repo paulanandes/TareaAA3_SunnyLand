@@ -57,6 +57,7 @@
             footsteps.Play();
             isMoving = true;
         }
+        //declaramos que cuando este saltando pare de sonar la el sonido de los footsteps
         else if (v<1 && isMoving && !isJumping){
             footsteps.Stop();
             isMoving = false;
@@ -79,20 +80,21 @@
             crouching.Play();
             print("the fox is crouching");
         }
-    
         // trigger your jumping sound here !
-        public void OnJump() { 
+        public void OnJump() {
             isJumping = true;
             jumping.Play();
             footsteps.Stop();
             print("the fox has jumped");
-        }
-
+            }
+    
         // trigger your cherry collection sound here !
         public void OnCherryCollect() {
             cherry.Play();
             print("the fox has collected a cherry");
         }
+
+        
 
 }
 
